@@ -7,7 +7,7 @@
 This repository contains code for performing non-normality analysis of the European power grid, along with the associated dataset. For a deeper explanation of the methods and theoretical background, see Ref. [1]. The workflow is built on open-source MATLAB tools: MATPOWER [2] for steady-state power flow calculations. We recommend MATLAB R2024a to ensure smooth execution. 
 
 
-## Energy Mix
+## Iberian Blackout on April 28, 2025
 Using data from the respective transmission system operators (TSOs), Fig. S1a–c illustrates the electricity generation patterns for Portugal [3], Spain [3], and France [4] on April 28, 2025. A blackout occurred at approximately 12:32 p.m. (UTC+01:00). To replicate these conditions in our simulations, the file EUR_2025.mat was prepared with generator outputs and power flows adjusted so that the modeled generation mix in the three countries matches the actual system state on that day.
 
 
