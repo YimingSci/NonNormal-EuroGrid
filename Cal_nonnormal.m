@@ -3,7 +3,7 @@ load('EUR_V2.mat');
 
 %% Build linearized model
 pantagruel = pant;
-[A_ext, N_bus] = build_model(pantagruel);
+[A_ext, N_bus] = Build_model(pantagruel);
 H = (A_ext + A_ext') / 2;
 
 %% Non-normality difference
@@ -30,3 +30,4 @@ xlabel('Sorted Bus Index');
 ylabel('Cumulative Reactivity');
 title('Total Modal Reactivity under Varying Iberian Inertia');
 grid on; hold off;
+
