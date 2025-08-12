@@ -27,6 +27,15 @@ Fig. S1(d) summarizes the initial disturbance setup, where more than ten individ
 
 Matpower 6.0 (https://matpower.org/download/) is required for the power flow calculation.
 
+## Dependency
+
+The following codes were used for simulations presented in Ref. [5]. If you use them
+in any future work, please provide proper credit by citing Ref. [5].
+
+- `NRsolver.m` : Solves power flow equations using the Newton-Raphson method.
+- `Radau5.m`   : Integrates stiff differential equations using the Radau IIA method.
+
+These scripts are included here with attribution for reproducibility and completeness.
 
 ## License
 
