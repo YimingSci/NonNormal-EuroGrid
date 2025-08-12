@@ -7,6 +7,17 @@
 This repository contains code for performing non-normality analysis of the European power grid, along with the associated dataset. For a deeper explanation of the methods and theoretical background, see Ref. [1]. The workflow is built on open-source MATLAB tools: MATPOWER [2] for steady-state power flow calculations. We recommend MATLAB R2024a to ensure smooth execution. 
 
 
+## Energy Mix
+Based on data provided by the transmission system operators (TSO), Fig. S2a-c shows the power generation profiles of Portugal [5], Spain [5], and France [6] on April 28, 2025. The blackout happened around 12:32 pm (UTC+01:00). To reflect this generation mix in the simulations, we pre-adjusted the generator outputs and power flows in the PSF region so that the modeled power mix in the three countries matches the conditions observed on that date, as shown in Fig. S2d-f.
+
+<img width="2685" height="2090" alt="Energy_mix" src="https://github.com/user-attachments/assets/8b0e53cf-fe2f-4099-b6e8-032ab95a96f3" />
+
+**Fig. S2:**
+*(a,b,c) Generation mix of Portugal, Spain, and France on April 28, 2025 as reported by the TSO. Portugal and Spain exhibit similar structures, with solar and wind power dominating their generation portfolios. In contrast, nuclear power constitutes the dominant source in France.
+(d,e,f) Adjusted generation mix used in the grid model for the corresponding countries.*
+
+
+
 ## Usage
 
 - `Cal_nonnormal.m` : **This script performs the non-normality analysis of the European power grid.** It first calls `Build_model.m` to construct the linearized system representation, then calculates the non-normality index by comparing the spectral properties of the system matrix and its symmetric part. The script proceeds to extract the first k dominant modes, compute and sum the modal reactivity for each bus, and finally generates a plot showing the cumulative reactivity distribution in ascending bus order.
@@ -15,6 +26,16 @@ This repository contains code for performing non-normality analysis of the Europ
 
 
 Matpower 6.0 (https://matpower.org/download/) is required for the power flow calculation.
+
+
+## License
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+The full text of the GNU General Public License can be found in the file "LICENSE.txt".
+
 
 ## Reference
 
