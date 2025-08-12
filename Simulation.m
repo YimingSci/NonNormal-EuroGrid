@@ -56,15 +56,14 @@ N_line = length(pant.branch);
 
 dt  = 1E-3;               % Time step
 Ndt = 5000;               % Number of simulation steps
-p_gain = 1;               % Power gain
 
 %% Fault event settings (generator IDs and power changes in MW)
-id_fault1 = 3335; dP_real1 = 355 / p_gain;
-id_fault2 = 3159; dP_real2 = 917 / p_gain;
-id_fault3 = 3324; dP_real3 = 550 / p_gain;
-id_fault4 = 3036; dP_real4 =  23 / p_gain;
-id_fault5 = 3704; dP_real5 =  34 / p_gain;
-id_fault6 = 2537; dP_real6 = 37.5 / p_gain;
+id_fault1 = 3335; dP_real1 = 355;
+id_fault2 = 3159; dP_real2 = 917;
+id_fault3 = 3324; dP_real3 = 550;
+id_fault4 = 3036; dP_real4 =  23;
+id_fault5 = 3704; dP_real5 =  34;
+id_fault6 = 2537; dP_real6 = 37.5;
 
 %% Load and generation setup
 L = pant.bus(:,3) / Sb;          % Per-unit loads
@@ -145,15 +144,6 @@ A_adj = adjacency(G_graph);
 deg = sum(A_adj, 2);
 D_inv = spdiags(1./deg, 0, N_bus, N_bus);
 W = D_inv * A_adj;
-
-%% Color mapping for visualization
-n_colors = 100;
-blue = [1, 1, 1];
-red  = [1, 0, 0];
-r = linspace(blue(1), red(1), n_colors)';
-g = linspace(blue(2), red(2), n_colors)';
-b = linspace(blue(3), red(3), n_colors)';
-cmap = [r, g, b];
 
 %% Node sizes for visualization
 sizes = ones(N_bus,1) * 15;
