@@ -1,4 +1,4 @@
-# NonNormality Analysis of the European Power Grid during the Iberian Blackout
+# Non-normality analysis of the European power grid
 
 
 
