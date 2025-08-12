@@ -1,4 +1,4 @@
-function [A_ext, N_bus] = build_model(pantagruel)
+function [A_ext, N_bus] = Build_model(pantagruel)
     % System base power
     Sb = pantagruel.baseMVA;
     N_bus  = length(pantagruel.bus);
@@ -92,3 +92,4 @@ function [A_ext, N_bus] = build_model(pantagruel)
 
     A_ext = A1 + A2;
 end
+
