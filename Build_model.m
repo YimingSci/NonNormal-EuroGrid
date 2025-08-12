@@ -2,7 +2,7 @@ function [A_ext, N_bus] = build_model(pantagruel)
 %% Build Linearized Power System Model
 %
 % This function constructs the extended linearized dynamic model of a
-% transmission network from an aggregated network dataset (`pantagruel`),
+% transmission network from an aggregated network dataset,
 % such as the `EUR_2025.mat` case. The formulation follows a
 % generator–load partition and produces the system state matrix for
 % non-normality and stability analysis.

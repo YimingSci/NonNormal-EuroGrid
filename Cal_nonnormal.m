@@ -7,7 +7,7 @@ clear; clc;
 % with emphasis on Iberian system dynamics.
 %
 % The workflow includes:
-%   - Building the extended system matrix from the aggregated "pantagruel" model
+%   - Building the extended system matrix from the aggregated model
 %   - Constructing the symmetric (Hermitian) component of the system matrix
 %   - Quantifying non-normality via the difference between Hermitian and
 %     non-Hermitian dominant eigenvalues
