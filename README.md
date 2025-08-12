@@ -8,14 +8,15 @@ This repository contains code for performing non-normality analysis of the Europ
 
 
 ## Iberian Blackout on April 28, 2025
-Using data from the respective transmission system operators (TSOs), Fig. S1a–c illustrates the electricity generation patterns for Portugal [3], Spain [3], and France [4] on April 28, 2025. A blackout occurred at approximately 12:32 p.m. (UTC+01:00). To replicate these conditions in our simulations, the file EUR_2025.mat was prepared with generator outputs and power flows adjusted so that the modeled generation mix in the three countries matches the actual system state on that day.
+Using data from the respective transmission system operators (TSOs), Fig. S1(a–c) illustrates the electricity generation patterns for Portugal [3], Spain [3], and France [4] on April 28, 2025. A blackout occurred at approximately 12:32 p.m. (UTC+01:00). To replicate these conditions in our simulations, the file EUR_2025.mat was prepared with generator outputs and power flows adjusted so that the modeled generation mix in the three countries matches the actual system state on that day.
 
+Fig. S1(d) summarizes the initial disturbance setup, where more than ten individual power-loss events are grouped into six representative buses, each named after a nearby major city. The Bus ID corresponds to the simulated disturbance node and can be matched to the bus numbering in `EUR_2025.mat`.
 
 <img width="1000" alt="图片2" src="https://github.com/user-attachments/assets/150a4c68-7639-4d7e-b3e4-4f67d656fe49" />
 
 
 **Fig. S1:**
-*(a–c) TSO-reported generation mixes for Portugal, Spain, and France on April 28, 2025. Portugal and Spain share a similar profile, with solar and wind power forming the bulk of their generation. France, by contrast, relies primarily on nuclear power.(d) Locations and associated power losses of the initial disturbances. Over ten individual loss events are consolidated into six representative buses, each labeled by the name of a nearby major city. The Bus ID corresponds to the simulated disturbance node and can be matched to the bus numbering in `EUR_2025.mat`.*
+*(a–c) TSO-reported generation mixes for Portugal, Spain, and France on April 28, 2025. Portugal and Spain share a similar profile, with solar and wind power forming the bulk of their generation. France, by contrast, relies primarily on nuclear power.(d) Locations and associated power losses of the initial disturbances. *
 
 
 
