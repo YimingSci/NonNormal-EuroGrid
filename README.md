@@ -8,7 +8,7 @@ This repository contains code for performing non-normality analysis of the Europ
 
 
 ## Energy Mix
-Based on data provided by the transmission system operators (TSO), Fig. S2a-c shows the power generation profiles of Portugal [5], Spain [5], and France [6] on April 28, 2025. The blackout happened around 12:32 pm (UTC+01:00). To reflect this generation mix in the simulations, we pre-adjusted the generator outputs and power flows in the PSF region so that the modeled power mix in the three countries matches the conditions observed on that date, as shown in Fig. S2d-f.
+Using data from the respective transmission system operators (TSOs), Fig. S1a–c illustrates the electricity generation patterns for Portugal [3], Spain [3], and France [4] on April 28, 2025. A blackout occurred at approximately 12:32 p.m. (UTC+01:00). To replicate these conditions in our simulations, the file EUR_2025.mat was prepared with generator outputs and power flows adjusted so that the modeled generation mix in the three countries matches the actual system state on that day.
 
 <img width="2685" height="2090" alt="Energy_mix" src="https://github.com/user-attachments/assets/8b0e53cf-fe2f-4099-b6e8-032ab95a96f3" />
 
