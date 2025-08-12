@@ -4,15 +4,18 @@
 
 ## Model Description
 
-The European power-grid model incorporates **7,343** transmission lines, **3,809** buses, and **1,089** generators, including **470** renewable units representing available wind and solar installations. The grid topology is obtained from the published dataset in Ref. [2], while information on wind and solar installations is curated from Ref. [3]. The renewable generation data for Portugal, Spain, and France (collectively referred to as PSF region) reflect installations and capacities as of June 2025.
-
-For power system analysis, we utilize widely adopted open-source tools, including the power flow solver MATPOWER [4] and the time-domain dynamic simulation framework described in Ref. [2]. Both tools are implemented in MATLAB, and we recommend using version R2024a for compatibility. See the reference below for more details.
+This repository contains code for performing non-normality analysis of the European power grid, along with the associated dataset. For a deeper explanation of the methods and theoretical background, see Ref. [1]. The workflow is built on open-source MATLAB tools: MATPOWER [2] for steady-state power flow calculations. We recommend MATLAB R2024a to ensure smooth execution. 
 
 
 ## Usage
 
-- `PSF_renewable.mat` : Power grid data, provided in a `mpc` format compatible with MATPOWER [4], with power flows pre-adjusted to match the generation profiles shown in Figures 2d–f.
-- `Dynamic_analysis.m` : Time-domain simulation code. This script includes fault initialization, parameter setup, and dynamic simulation procedures.
+- `Cal_nonnormal.m` : This script performs the non-normality analysis of the European power grid. It first calls `build_model.m` to construct the linearized system representation, then calculates the non-normality index by comparing the spectral properties of the system matrix and its symmetric part. The script proceeds to extract the first k dominant modes, compute and sum the modal reactivity for each bus, and finally generates a plot showing the cumulative reactivity distribution in ascending bus order.
+-
+-
+- fault initialization, parameter setup, and dynamic simulation procedures.
+- `build_model.m` :
+- `EUR_V2.mat` : Power grid data, provided in a `mpc` format compatible with MATPOWER [4], with power flows pre-adjusted to match the generation profiles shown in Figures 2d–f.
+
 
 Matpower 6.0 (https://matpower.org/download/) is required for the power flow calculation.
 
