@@ -4,11 +4,11 @@
 
 ## Repository Description
 
-This repository contains code for performing non-normality analysis of the European power grid, along with the associated dataset. For a deeper explanation of the methods and theoretical background, see Ref. [1]. The workflow is built on open-source MATLAB tools: MATPOWER [2] for steady-state power flow calculations. We recommend MATLAB R2024a to ensure smooth execution. 
+This repository contains code for performing non-normality analysis of the European power grid, along with the associated dataset. The data file `EUR_2025.mat` provides a realistic 2025 model of the European power grid, including data on the grid transmission network, generator and load geographical locations (including a high share of renewable sources), and generation mix at the time of the blackout. For details on the methods and theoretical background, see Ref. [1]. The workflow is built on the open-source MATLAB toolbox MATPOWER [2] for steady-state power flow calculations. All codes were tested on MATLAB R2024a. 
 
 
 ## Iberian Blackout on April 28, 2025
-Using data from the respective transmission system operators (TSOs), Fig. S1(a–c) illustrates the electricity generation patterns for Portugal [3], Spain [3], and France [4] on April 28, 2025. A blackout occurred at approximately 12:32 p.m. (UTC+01:00). To replicate these conditions in our simulations, the file EUR_2025.mat was prepared with generator outputs and power flows adjusted so that the modeled generation mix in the three countries matches the actual system state on that day.
+Using data from the respective transmission system operators (TSOs), Fig. S1(a–c) illustrates the electricity generation patterns for Portugal [3], Spain [3], and France [4] on April 28, 2025. A blackout occurred at approximately 12:32 p.m. (UTC+01:00). To replicate these conditions in our simulations, the file `EUR_2025.mat` was prepared with generator outputs and power flows adjusted so that the modeled generation mix in the three countries matches the actual system state on that day.
 
 Fig. S1(d) summarizes the initial disturbance setup, where more than ten individual power-loss events are grouped into six representative buses, each named after a nearby major city. The Bus ID corresponds to the simulated disturbance node and can be matched to the bus numbering in `EUR_2025.mat`.
 
@@ -16,15 +16,15 @@ Fig. S1(d) summarizes the initial disturbance setup, where more than ten individ
 
 
 **Fig. S1:**
-*(a–c) TSO-reported generation mixes for Portugal, Spain, and France on April 28, 2025. Portugal and Spain share a similar profile, with solar and wind power forming the bulk of their generation. France, by contrast, relies primarily on nuclear power.(d) Locations and associated power losses of the initial disturbances. *
+(**a–c**) TSO-reported generation mixes for Portugal, Spain, and France on April 28, 2025. Portugal and Spain share a similar profile, with solar and wind power forming the bulk of their generation. In contrast, France relies primarily on nuclear power. (**d**) Locations and associated power losses of the initial disturbances.
 
 
 
 ## Usage
 
-- `Cal_nonnormal.m` : **This script performs the non-normality analysis of the European power grid.** It first calls `Build_model.m` to construct the linearized system representation, then calculates the non-normality index by comparing the spectral properties of the system matrix and its symmetric part. The script proceeds to extract the first k dominant modes, compute and sum the modal reactivity for each bus, and finally generates a plot showing the cumulative reactivity distribution in ascending bus order.
-- `Build_model.m` : **Constructs the linearized state-space representation of the European power grid from the provided dataset.** It identifies generator and load buses, computes the network Laplacian from branch parameters, and rearranges it to separate generator and load dynamics. Using machine inertias, primary control gains, and load frequency coefficients, the function assembles the system matrices and returns the extended system matrix A_ext along with the total number of buses N_bus. This model serves as the foundation for subsequent non-normality and modal analysis.
-- `EUR_2025.mat` : Power grid data, provided in a `mpc` format compatible with MATPOWER [2].
+- `EUR_2025.mat` : **European power grid data.** The data file is provided in `mpc` format, which is compatible with MATPOWER [2].
+- `Cal_nonnormal.m` : **Non-normality analysis of the European power grid.** This code first calls `Build_model.m` to construct the linearized system representation, then calculates the non-normality index by comparing the spectral properties of the system matrix and its symmetric part. The script proceeds to extract the first K dominant modes, compute the modal non-normality for each bus, and finally generates a plot showing the cumulative non-normality distribution.
+- `Build_model.m` : **Linearized state-space representation of the European power grid.** This code identifies generator and load buses, computes the network Laplacian from branch parameters, and rearranges it into separate generator and load dynamics. Using the generator inertias, primary control gains, and load frequency coefficients, the function assembles the system matrices and returns the extended system matrix `A_ext` along with the total number of buses `N_bus`. This model serves as the foundation for the non-normality analysis.
 
 
 Matpower 6.0 (https://matpower.org/download/) is required for the power flow calculation.
