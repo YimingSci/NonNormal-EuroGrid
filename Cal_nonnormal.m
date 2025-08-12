@@ -1,5 +1,5 @@
 clear; clc;
-load('EUR_V2.mat');
+load('EUR_2025.mat');
 
 %% Build linearized model
 pantagruel = pant;
@@ -30,4 +30,5 @@ xlabel('Sorted Bus Index');
 ylabel('Cumulative Reactivity');
 title('Total Modal Reactivity under Varying Iberian Inertia');
 grid on; hold off;
+
 
